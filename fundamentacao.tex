@@ -5,7 +5,7 @@
 Neste capítulo é apresentado o plano de fundo teórico que envolve os tópicos
 pertinentes ao trabalho, destacando as definições e conceitos essenciais dos
 seguintes assuntos: Redes de Computadores, Internet, Segurança em redes de
-Computadores (estado da arte), Malware e suas respectivas técnicas de
+Computadores (estado da arte), \textit{Malware} e suas respectivas técnicas de
 detecção.
 \section{Redes de Computadores e Internet}
 \label{s.teoria_redes_internet}
@@ -14,13 +14,13 @@ Segundo o trabalho de KUROSE (\citeyear{kurose09}), pode-se definir a Internet
 como a rede de computadores que interconecta milhões de dispositivos
 computacionais ao redor do mundo. Há pouco tempo a gama de dispositivos
 conectados à internet era mais baixa e se resumia a servidores e computadores
-de mesa. Hoje podemos ver que cada vez mais dispositivos não tradicionais
-estão sendo ligados à internet. Assim, definimos como sistemas finais, ou
+de mesa. Hoje pode-se ver que cada vez mais dispositivos não tradicionais
+estão sendo ligados à internet. Assim, defini-se como sistemas finais, ou
 hospedeiros, quaisquer dispositivos que possuam tal capacidade de conexão. Em
 julho de 2008 estimavam-se 600 milhões de sistemas finais ligados à internet
 sem contar dispositivos que são conectados de maneira intermitente (como
 laptops e smartphones). Quando sistemas finais se comunicam, trocam arquivos
-segmentados, que chamamos de pacotes, por meio de enlaces de comunicação
+segmentados, que denominam-se como pacotes, por meio de enlaces de comunicação
 (links), que podem ser físicos ou por ondas, no caso de redes sem fio e via
 rádio. Os dispositivos periféricos que são responsáveis por essa comunicação
 são chamados comutadores de pacotes, vistos comumente como roteadores e
@@ -40,16 +40,13 @@ suficiente para esse trabalho pode ser ilustrada com a seguinte imagem:
 \begin{figure}[H]
 \caption{\small Alguns componentes da internet}
 \centering
-\includegraphics[scale=0.7]{figs/fig3.JPG}
+\includegraphics[scale=1.3]{figs/fig3.JPG}
 \label{f.internet_01}
 \legend{\small Fonte: Kurose (2009)}
 \end{figure}
 
-
-
-
 \section{Segurança em redes de computadores}
-\label{s.segurança}
+\label{s.seguranca}
 
 Ainda no material de Kurose pode-se definir vários conceitos em segurança de
 redes. A ideia em si vem de imaginar que as pessoas desejam se falar através
@@ -58,7 +55,7 @@ seja capaz de interceptar esses dados mesmo que elas estejam conectadas em
 locais considerados inseguros, que deixam computadores serem publicamente
 utilizados. Além disso, imaginar que as pessoas também querem garantir que as
 mensagens trocadas não sejam originadas de um intruso, ou passem por um
-intruso na rede. Com essa ideia podemos elencar as propriedades necessárias
+intruso na rede. Com essa ideia pode-se elencar as propriedades necessárias
 para uma comunicação considerada \emph{segura}. São elas:
 
 \begin{itemize}
@@ -96,31 +93,28 @@ destes objetos sempre reportando informações, como sensores e câmeras de
 trânsito.
 
 
-%TERMINAR
-
-
 \section{Malware}
 \label{s.malware_01}
 
-O conceito de Malware já foi abordado de maneira mais rudimentar na introdução
+O conceito de \textit{Malware} já foi abordado de maneira mais rudimentar na introdução
 do trabalho. Porém, como o viés do projeto caminha muito próximo de
-classificações mais profundas desse tópico, recorremos a uma bibliografia mais
-completa sobre os processos relacionados ao Malware. Na pesquisa desenvolvida
+classificações mais profundas desse tópico, faz-se necessário recorrer a uma bibliografia mais
+completa sobre os processos relacionados ao \textit{Malware}. Na pesquisa desenvolvida
 por SAHEED(\citeyear{saeed13}), pode-se aproveitar muitas informações sobre o
-patamar do desenvolvimento deste tipo de software. De acordo com pesquisas
+patamar do desenvolvimento deste tipo de \textit{software}. De acordo com pesquisas
 levantadas pela McAfee, esses programas continuam a se tornar mais numerosos
 dia-a-dia, sendo encontrados novos ``indivíduos'' aos milhares. Em
 contrapartida, pesquisadores e laboratórios especializados em segurança
-aprimoram novos métodos para construir anti-malware mais eficiente e mais
-autônomo. A seguir, iremos classificar Malware com base nas técnicas de
+aprimoram novos métodos para construir \textit{anti-malware} mais eficiente e mais
+autônomo. A seguir, diferenciam-se os tipos de \textit{Malware} com base nas técnicas de
 criação dos mesmos, separando-os por técnicas de ofuscamento, métodos de
 invocação, plataforma de atividade, abrangência e técnicas de propagação. Nem
-todo software malicioso é executado de dentro de máquinas infectadas;
+todo \textit{software} malicioso é executado de dentro de máquinas infectadas;
 atualmente a maioria dos ataques são originários da internet, pois as
 vulnerabilidades encontradas são mais proeminentes do que em ambientes de rede
 local, em virtude de a internet ser um espaço, de modo geral, público,
 beneficiando atacantes que tenham meios de acessar um sistema alvo
-remotamente. Um sistema de detecção de malware tem majoritariamente duas
+remotamente. Um sistema de detecção de \textit{malware} tem majoritariamente duas
 tarefas: busca e análise, ou seja, saber encontrar material não confiável e
 saber identificar com precisão que o material em questão realmente possui
 traços nocivos de código, ou faz com que algum outro programa apresente
@@ -131,14 +125,14 @@ comportamento considerado anormal.
 
 Para criar esse tipo de código, atacantes utilizam de vários meios desde a
 inserção de pequenos pedaços de código em outros programas, até a algoritmos
-de alta complexidade, feitos com o intuito de esconder o malware ou torná-lo
-\emph{polimórfico}. Um malware que se classifique como polimórfico consiste em
+de alta complexidade, feitos com o intuito de esconder o \textit{malware} ou torná-lo
+\emph{polimórfico}. Um \textit{malware} que se classifique como polimórfico consiste em
 um programa capaz de trocar pedaços do código sem mudar a semântica e o
 resultado da execução a cada infecção, para driblar verificações de sintaxe,
-geralmente com a ajuda de técnicas avançadas de encriptação. Malwares
+geralmente com a ajuda de técnicas avançadas de encriptação. \textit{Malwares}
 polimórficos são o grande ponto fraco das técnicas de detecção por assinatura,
 pois eles tornam inviável a geração de assinaturas únicas para classificação
-do código malicioso. Dizemos que um Malware é \emph{ofuscado} quando ele é
+do código malicioso. Pode-se dizer que um \textit{Malware} é \emph{ofuscado} quando ele é
 polimórfico ou \emph{metamórfico}, onde o código original é transformado em
 algo funcionalmente equivalente, porém muito mais difícil de se compreender
 quando lido. As técnicas utilizadas para que isso ocorra são a utilização de
@@ -150,62 +144,62 @@ porém sem alteração no fluxo de controle do mesmo.
 \subsection{Malware baseado em rede}
 \label{ss.malware_rede}
 
-Para dar início à classificação dos tipos de Malware, primeiro daremos
-destaque aos que se utilizam da rede como meio de propagação e de atuação.
-Nesse segmento, vamos identificar o que são os Adwares, Spywares, Cookies,
-Backdoors, Trojans, Sniffers, Spam e Botnet.
+Para dar início à classificação dos tipos de \textit{Malware}, primeiro observa-se com
+destaque aqueles que se utilizam da rede como meio de propagação e de atuação.
+Nesse segmento, é possível identificar o que são os \textit{Adwares}, \textit{Spywares}, \textit{Cookies},
+\textit{Backdoors}, \textit{Trojans}, \textit{Sniffers}, \textit{Spam} e \textit{Botnet}.
 
-Spyware é um tipo de malware que se instala de maneira secreta num computador,
+\textit{Spyware} é um tipo de \textit{malware} que se instala de maneira secreta num computador,
 com o objetivo de coletar informações sobre o uso de determinados programas ou
 sites visitados por um indivíduo sem o conhecimento do mesmo. Curiosamente,
 até mesmo grandes empresas como Google e Microsoft se utilizam desse tipo de
-Malware para coletar informações de seus clientes.
+\textit{Malware} para coletar informações de seus clientes.
 
-Adwares são feitos com a finalidade de servirem como atalhos publicitários
+\textit{Adwares} são feitos com a finalidade de servirem como atalhos publicitários
 para outros programas que têm seu desenvolvimento mantido com fundos oriundos
 de propaganda na internet. Por natureza, não são essencialmente danosos a
 sistemas e no máximo causam transtorno às pessoas por apresentarem anúncios
-indesejados, entretanto, existem algumas variações nessa família de malware
-que possuem spyware acoplados juntamente com as propagandas, invadindo a
+indesejados, entretanto, existem algumas variações nessa família de \textit{malware}
+que possuem \textit{spyware} acoplados juntamente com as propagandas, invadindo a
 privacidade dos usuários.
 
-Cookies, na verdade, são informações de usuário guardadas pelos navegadores de
+\textit{Cookies}, na verdade, são informações de usuário guardadas pelos navegadores de
 internet; eles servem primeiramente como meio de autenticação e armazenamento
 de configurações entre cliente e servidor. Um cookie é um pequeno arquivo de
 texto com essas informações, e na maioria das vezes vai ter um prazo de
 validade fixado pelo servidor que o usuário acessa. Também não são danosos,
-mas os cookies são usados por spywares e também no roubo de credenciais de
+mas os \textit{cookies} são usados por \textit{spywares} e também no roubo de credenciais de
 usuários.
 
-Backdoors ou Trapdoors são código malicioso atrelado a aplicações ou sistemas
+\textit{Backdoors} ou \textit{Trapdoors} são código malicioso atrelado a aplicações ou sistemas
 operacionais que concedem a alguém acesso a um sistema sem que seja necessário
 passar por métodos comuns de autenticação. Eventualmente esses programas
 também podem ser usados como meio para conseguir acesso remoto a sistemas.
 
-Um Trojan Horse (cavalo de tróia), ou apenas Trojan, descreve um programa que
+Um \textit{Trojan Horse} (cavalo de tróia), ou apenas \textit{Trojan}, descreve um programa que
 aparenta ser útil ou inofensivo, mas que ao ser executado pode corromper dados
-ou roubar informações. Um Trojan é desenvolvido para que o usuário, além de
+ou roubar informações. Um \textit{Trojan} é desenvolvido para que o usuário, além de
 não suspeitar dele, seja levado a executá-lo por curiosidade, então é muito
 comum ver esse tipo de programa escondido em arquivos multimídia que vão
 seduzir algum nicho de usuários.
 
-Sniffers são capazes de monitorar e armezenar dados a respeito do tráfego de
+\textit{Sniffers} são capazes de monitorar e armezenar dados a respeito do tráfego de
 uma rede. Eles capturam os pacotes que estão sendo trocados e os decodificam
-para ganhar acesso aos dados crus dos campos dos pacotes. Sniffers podem ser
+para ganhar acesso aos dados crus dos campos dos pacotes. \textit{Sniffers} podem ser
 usados como um passo inicial para uma invasão, para que posteriormente sejam
 obtidas senhas e outras informações confidenciais que sejam alvo de um
 atacante.
 
-O Spam talvez seja o tipo de malware mais conhecido por usuários mais leigos;
-basicamente é um pacote de software com a funcionalidade de transmitir
-mensagens em larga escala via e-mail. O impacto negativo do spam é a
+O \textit{Spam} talvez seja o tipo de \textit{malware} mais conhecido por usuários mais leigos;
+basicamente é um pacote de \textit{software} com a funcionalidade de transmitir
+mensagens em larga escala via \textit{e-mail}. O impacto negativo do \textit{spam} é a
 possibilidade de lentidão causada pelo alto número de requisições que será
 realizado por ele para os servidores, atrapalhando o recebimento de mensagens
-mais relevantes e poluindo as caixas de e-mail. Embora seja uma prática muito
-mal vista na internet, nos Estados Unidos o spam é legalizado, graças ao ato
+mais relevantes e poluindo as caixas de \textit{e-mail}. Embora seja uma prática muito
+mal vista na internet, nos Estados Unidos o \textit{spam} é legalizado, graças ao ato
 CAN-SPAM, desde 2003.
 
-Botnet não é na verdade um malware de código, mas uma coleção de computadores
+\textit{Botnet} não é na verdade um \textit{malware} de código, mas uma coleção de computadores
 infectados e que são controlados remotamente por um atacante que pode usá-los
 para realizar atos maldosos sem que seja preciso se autenticar nessas
 máquinas. Esse é o conceito por trás dos ataques de negação de serviço (DoS),
@@ -215,14 +209,13 @@ serviço na rede com um número absurdo de requisições aos servidores.(SAHEED,
 \subsection{Malware Comum}
 \label{ss.malware_comum}
 
-O Malware comum, em contraste com o de rede, é feito para ser executado em
+O \textit{Malware} comum, em contraste com o de rede, é feito para ser executado em
 ambiente local sem a necessidade de qualquer conexão a rede, pois também pode
 ser propagado via dispositivos físicos como pendrives, HDs externos e
-periféricos com software malicioso embarcado. Nessa categoria, iremos
-classificar os vírus, worms e bombas lógicas.
+periféricos com \textit{software} malicioso embarcado. Nessa categoria, classificam-se os vírus, \textit{worms} e bombas lógicas.
 
 Vírus de computador é um conceito que muitas vezes acaba generalizando o
-Malware. É muito comum um usuário que foi infectado apenas com adware dizer
+\textit{Malware}. É muito comum um usuário que foi infectado apenas com \textit{adware} dizer
 que ``está com vírus no PC'' e assim segue; Na verdade, um vírus de computador
 é um código capaz de se replicar durante a infecção em qualquer programa ou
 documento. Por exemplo, sistemas Windows em muitas mídias se utilizam de um
@@ -236,40 +229,50 @@ independente, isto é, sem precisar se atrelarem a um determinado programa para
 iniciar seu ciclo de vida. Eles podem, entre outras coisas, consumir a banda
 da rede e privar o usuário infectado de utilizá-la, além de criarem várias
 cópias de si para aumentar a taxa de programação. Esta última característica é
-o que os softwares de anti-vírus utilizam para identificar Worms; se um
+o que os \textit{softwares} de anti-vírus utilizam para identificar Worms; se um
 arquivo está se repetindo muitas vezes com atributos iguais, ele é considerado
 suspeito nesses sistemas de detecção.
 
-A bomba lógica é um software que permanece quieto até que se atinja uma
+A bomba lógica é um \textit{software} que permanece quieto até que se atinja uma
 determinada condição. Para isso, o programa fica apenas checando a data do
 sistema até que seja a data especificada e só então ele vai, de fato, executar
 seu código.(SAHEED, 2013)
 
-Dadas essas classificações, podemos ilustrar os tipos de malware e suas características com a seguinte tabela:
+Dadas essas classificações, pode-se ilustrar os tipos de \textit{malware} e suas características com a seguinte tabela:
 %%TABELAMONSTRA DE MALWARE
 %\includepdf[addtolist={1, table, Famílias de Malware e fatores comparativos,tabela_1}]{figs/tabela.pdf}
 \begin{table}[h]
-\caption{\small Famílias de Malware e fatores comparativos}
+\caption{\small Famílias de \textit{Malware} e fatores comparativos}
 \centering
 \includegraphics{figs/tabela.pdf}
 \label{f.tabelamalware}
 \legend{\small Fonte: Saeed (traduzida pelo autor).}
 \end{table}
  %%TABELA MONSTRA
+\subsection{Exemplos de Código de Malware} % (fold)
+\label{ssub:exemplos_malware}
+
+Alguns \textit{malwares} acabam tendo seu código aberto e disponibilizado para estudos, ora por vontade de seus próprios autores, ou por vazamento de informações feito por outros \textit{Hackers} interessados em tornar público esse tipo de informação. Nesta seção encontram-se algumas explicações sobre a arquitetura interna dos \textit{malwares} e trechos de código-fonte obtidos a partir de pesquisas em repositórios públicos da \textit{web} 
+
+- Citar os repositórios
+- Imagens do código dos malwares
+
+
+% subsubsection subsubsection_name (end)
 
 \section{Detecção}
 \label{s.deteccao}
 
-Nesta seção veremos o estado atual das tecnologias de
+Nesta seção, é exposto o estado atual das tecnologias de
 detecção e para onde elas estão caminhando no futuro. O trabalho de
-\citeauthor{baddarxx} nos mostra uma perspectiva bastante atual do cenário e
+Baddar et al. (\citeyear{baddarxx}) nos mostra uma perspectiva bastante atual do cenário e
 de como funcionam, de modo geral, os processos de detecção das anomalias. Um
 sistema de detecção pode agir em ambiente de rede, verificando as
 características do tráfego da rede, ou em nível de aplicação, onde vai varrer
 os dados do disco a procura de assinaturas conhecidas de anomalia ou de
 comportamentos fora do normal. A detecção por comportamento anômalo precisa
-ser capaz de filtrar casos anômalos isolados, que chamaremos de anomalias
-pontuais, de casos com suspeita mais palpável de anomalia, que chamaremos de
+ser capaz de filtrar casos anômalos isolados, denominados como anomalias
+pontuais, de casos com suspeita mais palpável de anomalia, que pode-se chamar de
 anomalia de contexto. Uma anomalia pontual pode ser exemplificada do seguinte
 modo: uma tentativa de acesso de um usuário num sistema corporativo não é, a
 princípio, um ato que possa ser classificado como anômalo; porém, se essa
@@ -295,7 +298,7 @@ anomalia pontual e contextual:
 \end{figure}
 
 \subsection{Detecção baseada em funcionalidade}
-\label{ss.deteccao_funcionalidade} Destacamos esse segmento em especial pois é
+\label{ss.deteccao_funcionalidade} Destaca-se esse segmento em especial pois é
 daqui que se origina a ideia de detecção baseada em assinaturas e em
 comportamentos. A detecção baseada em assinaturas compara casos suspeitos com
 uma relação já conhecida de código comprovadamente nocivo, que fica armazenada
@@ -306,7 +309,12 @@ em assinaturas. Numa outra abordagem, a detecção por comportamento vai tentar
 de um programa suspeito, geralmente recorrendo a dados de tempo de execução
 dos programas que estão sendo processados e classificando essas
 características com o auxílio de técnicas como aprendizado de máquina e redes
-neurais (BADDAR). A maior parte do conjunto recente das aplicações de detecção em nível de rede tem adotado a abordagem do aprendizado de máquinas para detectar software por comportamento, quando em nível de rede. Em nível de aplicação, a grande maioria também procura traçar perfis de comportamento utilizando técnicas de detecção em modo dinâmico como podemos ver nas tabelas abaixo:
+neurais (BADDAR). A maior parte do conjunto recente das aplicações de detecção
+em nível de rede tem adotado a abordagem do aprendizado de máquinas para
+detectar \textit{software} por comportamento, quando em nível de rede. Em nível de
+aplicação, a grande maioria também procura traçar perfis de comportamento
+utilizando técnicas de detecção em modo dinâmico como pode-se ver nos quadros
+abaixo:
 
 \begin{table}[h]
 \caption{\small Tecnologias recentes de detecção em nível de rede}
