@@ -1,7 +1,7 @@
 rule Regra_exemplo : tag
 {
 	meta:
-		author: Lucas T. A. Gouvêa [lucas.fim@gmail.com]
+		author: lucas.fim@gmail.com
 		description: Regra que marca arquivos por tamanho ou por casamento de string
 		date: 2016
 
