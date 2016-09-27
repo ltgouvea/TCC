@@ -1,6 +1,8 @@
 TCC para o curso de BCC que não vale AACC na UNESP de Bauru
-http://i.giphy.com/KC69a6WBYuLra.gif
-well, I don't.
+
+![alt tag](http://i.giphy.com/KC69a6WBYuLra.gif)
+
+Well, I don't.
 
 Repositório feito para versionar a monografia do meu projeto de TCC que peguei de um modelo padrão do LaTeX.
 
