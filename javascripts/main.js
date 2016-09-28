@@ -45,6 +45,16 @@ function play() {
   }
 }
 
+function showimg() {
+  if ($('#imgtrigger').attr('class') === 'hidden') {
+    $('#label_show').text('aqui (clique para esconder)');
+    $('#imgtrigger').removeClass('hidden');
+  } else {
+    $('#label_show').text('aqui');
+    $('#imgtrigger').addClass('hidden');
+  }
+}
+
 fixScale = function(doc) {
 
   var addEvent = 'addEventListener',

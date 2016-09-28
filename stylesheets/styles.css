@@ -869,6 +869,11 @@ footer {
   top: -85px;
   right: 150px;
 }
+
+.hidden {
+  display: none;
+}
+
 @media print, screen and (max-width: 1060px) {
   div.wrapper {
     width: auto;
