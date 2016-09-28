@@ -152,7 +152,7 @@ a:active {
  * Addresses font sizes within 'section' and 'article' in FF4+, Chrome, S5
  */
 h1 {
-  font-size: 2em;
+  font-size: 1.6em;
   margin: 0.67em 0;
 }
 
@@ -655,9 +655,10 @@ header {
   margin: 0;
   position: fixed;
   top: 0;
-  left: 0;
+  left: 16%;
+  width: 66%;
+  border-radius: 5px;
   right: 0;
-  width: 100%;
   text-align: center;
   background: url(../images/background.png) #4276b6;
   -moz-box-shadow: 1px 0px 2px rgba(0, 0, 0, 0.75);
@@ -669,7 +670,7 @@ header {
   min-height: 76px;
 }
 header h1 {
-  font: 40px/48px "Copse", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 25px/29px "Copse", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #f3f3f3;
   text-shadow: 0px 2px 0px #235796;
   margin: 0px;
@@ -688,14 +689,14 @@ header p {
 
 #banner {
   z-index: 100;
-  left: 0;
+  left: 300px;
   right: 50%;
   height: 50px;
   margin-right: -382px;
   position: fixed;
   top: 115px;
-  background: #ffcc00;
-  border: 1px solid #f0b500;
+  background: #7E05B6;
+  border: 1px solid #34014C;
   -moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
   -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
   -o-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
@@ -709,13 +710,13 @@ header p {
   padding-right: 10px;
 }
 #banner .button {
-  border: 1px solid #dba500;
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffe788), color-stop(100%, #ffce38));
-  background: -webkit-linear-gradient(#ffe788, #ffce38);
-  background: -moz-linear-gradient(#ffe788, #ffce38);
-  background: -o-linear-gradient(#ffe788, #ffce38);
-  background: -ms-linear-gradient(#ffe788, #ffce38);
-  background: linear-gradient(#ffe788, #ffce38);
+  border: 0.5px solid;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #B585DD), color-stop(100%, #AD38FF));
+  background: -webkit-linear-gradient(#B585DD, #AD38FF);
+  background: -moz-linear-gradient(#B585DD, #AD38FF);
+  background: -o-linear-gradient(#B585DD, #AD38FF);
+  background: -ms-linear-gradient(#B585DD, #AD38FF);
+  background: linear-gradient(#B585DD, #AD38FF);
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
   -o-border-radius: 2px;
@@ -726,7 +727,7 @@ header p {
   -webkit-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.4), 0px 1px 1px rgba(0, 0, 0, 0.1);
   -o-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.4), 0px 1px 1px rgba(0, 0, 0, 0.1);
   box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.4), 0px 1px 1px rgba(0, 0, 0, 0.1);
-  background-color: #FFE788;
+  background-color: #B585DD;
   margin-left: 5px;
   padding: 10px 12px;
   margin-top: 6px;
@@ -738,13 +739,13 @@ header p {
   text-align: center;
 }
 #banner .button:hover {
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffe788), color-stop(100%, #ffe788));
-  background: -webkit-linear-gradient(#ffe788, #ffe788);
-  background: -moz-linear-gradient(#ffe788, #ffe788);
-  background: -o-linear-gradient(#ffe788, #ffe788);
-  background: -ms-linear-gradient(#ffe788, #ffe788);
-  background: linear-gradient(#ffe788, #ffe788);
-  background-color: #ffeca0;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #B585DD), color-stop(100%, #B585DD));
+  background: -webkit-linear-gradient(#B585DD, #B585DD);
+  background: -moz-linear-gradient(#B585DD, #B585DD);
+  background: -o-linear-gradient(#B585DD, #B585DD);
+  background: -ms-linear-gradient(#B585DD, #B585DD);
+  background: linear-gradient(#B585DD, #B585DD);
+  background-color: #D993E6;
 }
 #banner .fork {
   position: fixed;
@@ -754,7 +755,7 @@ header p {
   margin-top: 6px;
   line-height: 14px;
   font-size: 14px;
-  background-color: #FFE788;
+  background-color: #B585DD;
 }
 #banner .downloads {
   float: right;
@@ -764,7 +765,7 @@ header p {
   float: left;
   line-height: 52px;
   font-size: 90%;
-  color: #9d7f0d;
+  color: #D126F5;
   text-transform: uppercase;
   text-shadow: rgba(255, 255, 255, 0.2) 0 1px 0;
 }
@@ -779,7 +780,7 @@ header p {
   display: inline;
 }
 #banner ul li a.button {
-  background-color: #FFE788;
+  background-color: #B585DD;
 }
 #banner #logo {
   position: absolute;
@@ -860,6 +861,14 @@ footer {
   line-height: 16px;
 }
 
+.unicorn-picture {
+  border-radius: 50px;
+  border: 3px solid;
+  float: right;
+  position: relative;
+  top: -85px;
+  right: 150px;
+}
 @media print, screen and (max-width: 1060px) {
   div.wrapper {
     width: auto;
