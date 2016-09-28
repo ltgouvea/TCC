@@ -32,6 +32,19 @@ $(document).ready(function(){
   $('img').load(sectionHeight);
 });
 
+function play() {
+  var audio = document.getElementById("audio"),
+      aux   = $('.sound');
+  if (aux.attr('value') === 'STOP') {
+    audio.play();
+    aux.attr('value', 'PLAY');
+  } else {
+    audio.pause(); 
+    audio.currentTime = 0; 
+    aux.attr('value', 'STOP');
+  }
+}
+
 fixScale = function(doc) {
 
   var addEvent = 'addEventListener',
