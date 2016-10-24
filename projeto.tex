@@ -49,8 +49,9 @@
 \usepackage{customizacoes}
 \usepackage[final]{pdfpages}
 \usepackage{float}
-
-
+\usepackage{xr}
+\usepackage{nameref}
+\usepackage{trivfloat}
 % ---
 
 % ---
@@ -67,7 +68,10 @@
 % ---
 % CONFIGURAÇÕES DE PACOTES
 % ---
-
+\trivfloat{quadro}
+\floatstyle{plaintop} % Forçar posição da legenda para o topo
+\restylefloat{quadro} % Forçar posição da legenda para o topo
+\renewcommand{\listquadroname}{Lista de Quadros} % Forçar texto na Lista de Quadros
 % ---
 % Configurações do pacote backref
 \renewcommand{\familydefault}{\sfdefault}
@@ -352,6 +356,15 @@ Since the Internet's origins, there's a great preoccupation with the privacy of 
 % ---
 
 % ---
+% inserir lista de quadros
+% ---
+\newpage % Forçar a lista de quadros em uma nova página
+\phantomsection % Comando necessário caso o pacote hyperref seja utilizado, visando a corrigir o link
+\addcontentsline{toc}{chapter}{\listquadroname} % Adicionar no Sumário um capítulo cujo nome está contido na variável listquadroname
+\listofquadros % Adiciona lista de quadros
+\cleardoublepage
+
+% ---
 % inserir lista de abreviaturas e siglas
 % ---
 % ---
@@ -364,8 +377,6 @@ Since the Internet's origins, there's a great preoccupation with the privacy of 
 \tableofcontents*
 \cleardoublepage
 % ---
-
-
 
 % ----------------------------------------------------------
 % ELEMENTOS TEXTUAIS
