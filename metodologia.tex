@@ -70,10 +70,10 @@ capturados pela web. Com esse grande arsenal de assinaturas de \textit{malware},
 possível testarmos com certa completude as técnicas e assinaturas que são
 desenvolvidas no mercado e utilizadas nos sistemas de detecção de intrusão.
 
-\subsubsection{Regras de detecção do Yara} 
+\subsubsection{Regras de detecção do Yara}
 \label{l.regrasdyara}
 O Yara funciona interpretando arquivos que contém características que possivelmente
-apontam para o comportamento dos elementos da família do \textit{malware} que deve ser
+apontam para o padrão dos elementos da família do \textit{malware} que deve ser
 isolado. As regras são escritas com uma sintaxe simples que remete à
 construção de uma estrutura de dados em C, contendo strings a serem comparadas
 tanto em formato texto quanto hexadecimal, conjuntos de strings, endereços da
@@ -110,8 +110,36 @@ Outro exemplo de regra de detecção envolvendo parâmetros semelhantes aos ante
 	\label{fig:superfish}
 \end{figure}
 
-\subsection{Logs de resultados do Yara} % (fold)
+As regras que utilizaremos no decorrer do projeto serão unificadas num arquivo de índice, compiladas via um\textit{script} em Python para a interpretação do Yara e combinadas com o conjunto completo de arquivos de uma só vez.
+
+\subsection{\textit{Logs} de resultados do Yara} % (fold)
 \label{sub:logs_de_resultados_do_yara}
+
+As varreduras efetuadas pelo Yara podem ter seus resultados gravados em arquivos de texto para análise posterior, que podem também definirem-se como \textit{logs}, que por sua vez retornam um dicionário de strings com o seguinte formato:
+
+\begin{lstlisting}[caption=Conteúdo dos arquivos de resultado de varredura, label=resultyara]
+{
+'tags': ['mal', 'ware'],
+'matches': True,
+'namespace': 'default',
+'rule': 'regras_compiladas',
+'meta': {},
+'strings': [(81L, '$a', 'abc'), (141L, '$b', 'def')]
+}
+\end{lstlisting}
+
+O que cada parâmetro significa:
+\begin{itemize}
+	\item '\textit{tags}': conjunto dos nomes dos programas maliciosos que estão sendo buscados
+
+	\item '\textit{matches}': True significa positivo para infecção
+
+	\item '\textit{rule}': Arquivo com as regras compiladas para aplicação
+
+	\item '\textit{meta}': metadados do arquivo
+
+	\item '\textit{strings}': conjunto de strings para comparação dentro do objeto de varredura
+\end{itemize}
 
 \subsection{Python}
 \label{sub:python}
@@ -121,16 +149,16 @@ de 1994, foi lançada a primeira distribuição da versão 1.0 oficial da
 linguagem e sua versão mais recente foi lançada em setembro de 2015. Para as
 necessidades do presente projeto, utilizaremos a versão 2.7 da linguagem, por
 suportar a implementação dos \textit{scripts} do Yara e também ser a distribuição mais
-estável da linguagem, segundo o \href{www.python.org}{site oficial}. O Yara suporta integração com scripts feitos tanto em C como em Python, porém a escolha da linguagem se deu principalmente pela frequência, onde a grande maioria de scripts já prontos e documentados foi feita em Python. As implementações em C são mais comuns em âmbito corporativo, onde se constroem módulos mais otimizados para uso em varreduras de \textit{malware} e o desempenho torna-se um fator mais chave na aplicação das regras.
+estável da linguagem, segundo o \href{www.python.org}{\textit{site} oficial}. O Yara suporta integração com scripts feitos tanto em código C puro como em Python, porém a escolha da linguagem se deu principalmente pela frequência, onde a grande maioria de scripts já prontos e documentados foi feita em Python. As implementações em C são mais comuns em âmbito corporativo, onde se constroem módulos mais otimizados para uso em varreduras de \textit{malware} numa escala mais elevada e o desempenho torna-se um fator mais significativo na aplicação das regras.
 
 \subsection{Clam AV}
 \label{sub:clamav}
 
-O ``Clam AV'' é um antivírus de código aberto que possui um sistema muito interessante para a montagem de sua base de dados de assinaturas. O \textit{Community Threat Tracking System} funciona coletando os dados de infecções ocorridas nos sistemas dos usuários e aprimorando suas assinaturas automaticamente com base nos dados estatísticos que a comunidade fornece. As bases buscam evidenciar quais \textit{malwares} estão mais ativos no momento, e tornam todas as suas descobertas públicas. Os usuários têm a opção de enviarem dados tanto anonimamente, quanto com um identificador único para cada instalação, e tais dados não são comercializados com terceiros, ou monetizados de alguma outra forma, todas as análises feitas por eles são apenas um serviço gratuito prestado à comunidade \textit{open source}.
-No projeto que foi desenvolvido, utilizaram-se bases de dados com assinaturas utilizadas pelo ``Clam AV'' em suas próprias varreduras em \textit{scripts} que as descomprimem e convertem para regras do Yara, que por sua vez podem ser editadas ou testadas isoladamente a critério do desenvolvedor.
+O Clam AV é um antivírus de código aberto que possui um sistema muito interessante para a montagem de sua base de dados de assinaturas. O \textit{Community Threat Tracking System} funciona coletando os dados de infecções ocorridas nos sistemas dos usuários e aprimorando suas assinaturas automaticamente com base nos dados estatísticos que a comunidade fornece. As bases buscam evidenciar quais \textit{malwares} estão mais ativos no momento, e tornam todas as suas descobertas públicas. Os usuários têm a opção de enviarem dados tanto anonimamente, quanto com um identificador único para cada instalação, e tais dados não são comercializados com terceiros, ou monetizados de alguma outra forma, todas as análises feitas por eles são apenas um serviço gratuito prestado à comunidade \textit{open source}.
+No projeto que foi desenvolvido, utilizaram-se bases de dados com assinaturas utilizadas pelo Clam AV em suas próprias varreduras em \textit{scripts} que as descomprimem e convertem para regras do Yara, que por sua vez podem ser editadas ou testadas isoladamente a critério do desenvolvedor.
 
 
 \subsection{Resumo da metodologia do projeto}
 \label{ss.resumo}
 
-O fluxo de desenvolvimento do projeto é constituído da aplicação de regras do Yara dentro das amostras vivas de \textit{malware} obtidas nos repositórios citados na seção do desenvolvimento
+O fluxo de desenvolvimento do projeto consiste na aplicação de um índice de regras de detecção do Yara, construído a partir da conversão de arquivos contendo bases de assinaturas do Clam AV para arquivos contendo regras de detecção do Yara, sobre o conjunto de amostras vivas de \textit{malware} obtidas nos repositórios citados na seção do desenvolvimento do projeto. As varreduras são feitas via linha de comando e para agilizá-las, além do uso de índices para agrupar regras, também pode-se automatizar as varreduras em grupos maiores de arquivos aplicando um pouco de \textit{shell script}. Os resultados das varreduras serão armazenados em arquivos de texto que irão conter todos os atributos analisados a cada arquivo a respeito de uma determinada regra. Vamos explicar com um pouco mais de detalhe como ficam caracterizadas as infecções nos \textit{logs} de resultados, com casos de teste envolvendo expectativas de resultados positivos, falso-positivos e negativos. Ao final da seção de desenvolvimento, também será explicada a ideia da aplicação \textit{web} para varreduras remotas e manipulação de regras do Yara.
