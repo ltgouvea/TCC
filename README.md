@@ -16,11 +16,11 @@ SIM, CARALHO ELE FAZ! SEUS PROFESSORES NUNCA TE DISSERAM PORQUE ELES TE ODEIAM :
 
 - Pacote Miktex: esse negócio é insano e já baixa o que você vai precisar pra construir o .tex além de manter tudo atualizadinho. Mamão com açúcar memo. http://miktex.org/ e instala aí. Qualquer coisa use o google pra fazer uma gambiarra no seu sistema operacional (to usando Window$$ pq o fabricante do meu note colocou um sigilo azteca contra linux na bios do meu aparelho e não tenho as moral de fazer o ritual certo pra quebrar)
 
-- Sublime Text: um editor de texto muito bão que provavelmente ce já deve conhecer. Use o package control e instale snippets e extensões pra deixar tudo suave feito algodão doce: Beautifylatex, Citebibtex, Latex snippets, Latexing e LateXTools são o que eu tô usando aqui. 
+- Sublime Text: um editor de texto muito bão que provavelmente ce já deve conhecer. Use o package control e instale snippets e extensões pra deixar tudo suave feito algodão doce: Beautifylatex, Citebibtex, Latex snippets, Latexing e LateXTools são o que eu tô usando aqui.
 
-Daí, pequeno gafanhoto, abra o projeto.tex no sublime, CTRL +  B E SAI UM PDF MAIS BONITO DO QUE VOCÊ!
+[UPDATE] - Migrei para o Atom, acho que ele consegue ser um editor ainda mais fodão que o Sublime e tem uma estrutura de pacotes e de funcionamento mais limpa (achei mais bonito também mas foda-se). Tem o mesmo pacote latextools pra instalar de dentro dele também, deixei tudo rodando normalzinho em 5 minutos configurando. Se eu consigo, você consegue (eu acho).
+
+Daí, pequeno gafanhoto, abra o projeto.tex no sublime, CTRL +  B (no atom é CTRL + ALT + B) E SAI UM PDF MAIS BONITO DO QUE VOCÊ!
 
 
 * Recomendo SumatraPDF pra abrir os pdf por ele ser leve feito uma pluma
-
-
