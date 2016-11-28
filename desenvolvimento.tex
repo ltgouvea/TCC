@@ -1,11 +1,13 @@
 \chapter{DESENVOLVIMENTO}
 \label{c.Desenvolvimento}
 
-O desenvolvimento do projeto dividiu-se em quatro fases: a montagem do ambiente de testes de assinaturas construídas
-a partir de regras do Yara; a obtenção das regras e construção de um índice de agrupamento das mesmas para agilizar a
-execução das varreduras; obtenção e escolha de amostras de \textit{malware} para testagem; bateria de testes final e
-análise de resultados. Complementarmente, foi desenvolvida a ideia de uma aplicação \textit{web} para análise
-de \textit{malware} com base em regras de detecção do Yara.
+O desenvolvimento do projeto dividiu-se em quatro fases: a montagem do ambiente
+de testes de assinaturas construídas a partir de regras do Yara; a obtenção das
+regras e construção de um índice de agrupamento das mesmas para agilizar a
+execução das varreduras; obtenção e escolha de amostras de \textit{malware} para
+testagem; bateria de testes final e análise de resultados. Complementarmente,
+foi desenvolvida a ideia de uma aplicação \textit{web} para análise de
+\textit{malware} com base em regras de detecção do Yara.
 
 \section{Obtenção das regras de detecção e das amostras de \textit{malware}}
 \label{s.obtregras}
@@ -34,6 +36,7 @@ bases de dados utilizadas na implementação:
   \centering
   \caption{Funcionamento do \textit{script} de conversão de bases do ClamAV para regras do Yara}
   \label{f.regras_convertidas}
+  \legend{Fonte: Elaborada pelo autor.}
 \end{figure}
 
 Após a tradução das regras contidas nas bases de dados, é necessário compilá-las
@@ -45,6 +48,7 @@ código-fonte exibido na figura abaixo:
   \centering
   \caption{Script para compilação das regras de detecção}
   \label{f.script_comp}
+  \legend{Fonte: Elaborada pelo autor.}
 \end{figure}
 
 No final da seção de desenvolvimento, há uma lista com os \textit{links} para
@@ -98,8 +102,9 @@ esboço dos elementos e do funcionamento da aplicação projetada.
 \begin{figure}[H]
   \includegraphics[scale=0.6]{figs/flux_prototipo}
   \centering
-  \caption{Fluxograma de funcionamento da aplicação. Fonte: elaborada pelo autor.}
+  \caption{Fluxograma de funcionamento da aplicação.}
   \label{f.flux_prototipo}
+  \legend{Fonte: elaborada pelo autor.}
 \end{figure}
 
 Pensou-se também numa possível estrutura de comunicação entre os módulos
