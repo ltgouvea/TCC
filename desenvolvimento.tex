@@ -57,38 +57,54 @@ No final da seção de desenvolvimento, há uma lista com os \textit{links} para
 \section{Testes iniciais com o ambiente de desenvolvimento}
 \label{s.testesiniciais}
 
-Apenas com a finalidade de atestar o funcionamento da ferramenta estudada no projeto,
-antes de decidir seguir com seu uso no decorrer da implementação planejada,
-algumas regras de teste simples foram aplicadas sobre alguns arquivos de texto
-contendo pedaços de código e um conjunto de \textit{strings} que deveria ser
-descoberto numa varredura. Os testes foram bem sucedidos nesta etapa por dois
-motivos; primeiro, as regras escritas eram pequenas e rudimentares, e em segundo
-lugar também ainda não havia necessidade de conversão de bancos de assinaturas
-ou montagem de índices mais complexos e adaptação de \textit{scripts} envolvidos
-neste processo inicial. Numa tentativa mais condizente com um cenário real de
-detecção de \textit{malware},
-se fez a construção de um índice com um número bem maior de regras obtidas nos repositórios
-já citados previamente. Contudo, nesta segunda etapa ainda não procurou-se converter as
-regras contidas dentro das bases de assinaturas do ClamAV, por motivos de complexidade
-e de completude dos testes propostos. Nessa mesma fase, as regras foram aplicadas dentro
-de um conjunto mais numeroso de arquivos, já contendo alguns arquivos de código-fonte
-e também executáveis de \textit{malware} misturados em algumas pastas, para ver como
-o Yara funcionaria num contexto de varredura mais recursivo. Estas duas primeiras etapas
-de testes foram bem sucedidas e o Yara acusou corretamente quais arquivos continham
-as assinaturas apontadas pelo índice de regras aplicado.
+Apenas com a finalidade de atestar o funcionamento da ferramenta estudada no
+projeto, antes de decidir seguir com seu uso no decorrer da implementação
+planejada, algumas regras de teste simples foram aplicadas sobre alguns arquivos
+de texto contendo pedaços de código e um conjunto de \textit{strings} que
+deveria ser descoberto numa varredura. Os testes foram bem sucedidos nesta etapa
+por dois motivos; primeiro, as regras escritas eram pequenas e rudimentares, e
+em segundo lugar também ainda não havia necessidade de conversão de bancos de
+assinaturas ou montagem de índices mais complexos e adaptação de
+\textit{scripts} envolvidos neste processo inicial. Numa tentativa mais
+condizente com um cenário real de detecção de \textit{malware}, se fez a
+construção de um índice com um número bem maior de regras obtidas nos
+repositórios já citados previamente. Contudo, nesta segunda etapa ainda não
+procurou-se converter as regras contidas dentro das bases de assinaturas do
+ClamAV, por motivos de complexidade e de completude dos testes propostos. Nessa
+mesma fase, as regras foram aplicadas dentro de um conjunto mais numeroso de
+arquivos, já contendo alguns arquivos de código-fonte e também executáveis de
+\textit{malware} misturados em algumas pastas, para ver como o Yara funcionaria
+num contexto de varredura mais recursivo. Estas duas primeiras etapas de testes
+foram bem sucedidas e o Yara acusou corretamente quais arquivos continham as
+características mapeadas pelas assinaturas do índice de regras aplicado.
 
 
 
 \section{Testagem completa e análise de resultados}
 \label{s.testefull}
 
-Para concluir o trabalho com a ferramenta de uma maneira mais definitiva, um
+Para consolidar o trabalho com a ferramenta de uma maneira mais definitiva, um
 conjunto de aplicativos ``sadios'' foi misturado com as amostras de
 \textit{malware}, e depois espalhado arbitrária e aleatoriamente dentro de uma
 estrutura de pastas para que se efetuasse uma varredura recursiva, utilizando um
 índice de regras mais extenso, agora contendo as regras convertidas e compiladas
 a partir das bases de dados do ClamAV e das demais regras avulsas encontradas
-durante a pesquisa desenvolvida.
+durante a pesquisa desenvolvida. A varredura foi bem sucedida e o Yara não
+apontou falsos-positivos quando passou pelos arquivos limpos. A única
+dificuldade encontrada foi quanto à varreduras envolvendo as regras de detecção
+para \textit{malware} construído para dispositivos móveis, onde as regras
+relacionadas ao sistema \textit{Android} procuravam importar módulos do
+\textit{kit} de desenvolvimento do mesmo, que não estava instalado no ambiente
+do projeto, gerando tal problema que por questões de \textit{hardware} não foi
+contornado, pois o carregamento de toda a estrutura do \textit{kit}
+sobrecarregava os recursos disponíveis na implementação,  tornando inviáveis os
+testes envolvendo esse grupo de regras. Contudo, na possibilidade de continuar o
+desenvolvimento do projeto num ambiente com \textit{hardware} mais generoso e
+com o uso de um sistema operacional mais apropriado para esse tipo de trabalho,
+pode-se afirmar com segurança que as regras funcionariam sem nenhum problema.
+Enfim, o resultado da varredura recursiva envolvendo um índice de regras
+completo foi satisfatório e  esclarecedor quanto ao funcionamento e à
+confiabilidade da ferramenta estudada.
 
 \section{Ideia de uma aplicação web do projeto desenvolvido}
 \label{s.prototipo}
@@ -124,14 +140,11 @@ automatização dos processos de formatação e validação dos arquivos, com a
 finalidade de assegurar o funcionamento correto da montagem dos índices de
 regras contendo assinaturas e dos \textit{scripts} de varredura de arquivo
 executados na camada do servidor.
-% TODO
-% Listar estrutura de pastas do módulo de conversão e varredura
-% Detalhar o funcionamento do desgraçado [DONE]
-% Mostrar o front-end e explicar como funcionaria o backend [DONE, falta o front]
-% Escrever a conclusão [DONE]
-% Mandar para o Kelton Revisar
-% Rezar para os deuses do TCC me olharem com bondade
-% Comprar 5 fardos de cerveja
-% 2 KG de carne
-% 50g de aipim jamaicano
-% Party hard.
+
+\section{Repositório do projeto no GitHub}
+\label{s.repositorio}
+Como dito anteriormente, o projeto foi centralizado e disponibilizado num
+repositório \textit{online} dentro do \textit{GitHub} para versionamento de
+código e também do desenvolvimento da monografia. Todo o material utilizado na
+implementação do projeto encontra-se lá também disponível para
+\textit{Download}. O endereço se encontra na seção de conclusão da monografia.

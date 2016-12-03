@@ -124,7 +124,11 @@ Outro exemplo de regra de detecção envolvendo parâmetros semelhantes aos ante
 	\legend{Fonte: elaborada pelo autor}
 \end{figure}
 
-As regras que utilizaremos no decorrer do projeto serão unificadas num arquivo de índice, compiladas via um\textit{script} em Python para a interpretação do Yara e combinadas com o conjunto completo de arquivos de uma só vez.
+As regras que utilizaremos no decorrer do projeto serão unificadas num arquivo
+de índice, compiladas com o uso de um \textit{script} em Python para a
+interpretação do Yara e combinadas com o conjunto completo de arquivos de uma só
+vez, pois o próprio Yara já possui métodos implementados que possibilitam
+varreduras de maneira recursiva.
 
 \subsection{\textit{Logs} de resultados do Yara} % (fold)
 \label{sub:logs_de_resultados_do_yara}
@@ -145,7 +149,7 @@ formato:
 }
 \end{lstlisting}
 
-O que cada parâmetro significa:
+Respectivamente, segue o que cada parâmetro representa:
 \begin{itemize}
 	\item '\textit{tags}': conjunto dos nomes dos programas maliciosos que estão sendo buscados
 
