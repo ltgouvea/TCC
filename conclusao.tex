@@ -24,30 +24,43 @@ estarem constantemente procurando se antecipar a possíveis ataques e a novas
 formas de quebra de segurança, com a utilização de conceitos como redes neurais,
 grafos, e até mesmo aprendizado de máquina.
 
-No âmbito mais prático do desenvolvimento do projeto, observou-se que a abertura
-para a criação e melhoria de técnicas envolvendo assinaturas é relativamente
-recente, e as ferramentas encontradas e utilizadas para tais fins não são
-voltadas para o público mais leigo e, talvez, curiosos e entusiastas do assunto,
-haja visto que mesmo uma ferramenta como o Yara, cujo intuito é tornar essa
-manipulação de assinaturas mais simplificada, requer uma configuração que exige
-um razoável conhecimento de utilização de terminais e linhas de comando, e
-afinidade com alguma linguagem de programação de alto ou médio nível para a
-construção dos scripts de varredura ou conversão de bases de assinaturas. Foi
-pensando nesse aspceto que se desenvolveu a ideia da aplicação \textit{online}
-com um sistema capaz de automatizar as tarefas de manuseio de assinaturas de
-\textit{malware}, para que as pessoas possam, além de testar a confiabilidade de
-arquivos encontrados na \textit{internet}, ter um ponto de partida para conhecer
-essa área da computação e também tentar colocar um pouco desse conhecimento em
+No âmbito mais prático do desenvolvimento do projeto, foram obtidos resultados
+positivos quanto ao que foi proposto, com a construção de parte de uma aplicação
+para verificação de arquivos em geral e os testes envolvendo as ferramentas que
+compõem tal aplicação. Porém, observou-se que a abertura para a criação e
+melhoria de técnicas envolvendo assinaturas é relativamente recente, e as
+ferramentas encontradas e utilizadas para tais fins não são voltadas para o
+público mais leigo e, talvez, curiosos e entusiastas do assunto, haja visto que
+mesmo uma ferramenta como o Yara, cujo intuito é tornar essa manipulação de
+assinaturas mais simplificada, requer uma configuração que exige um razoável
+conhecimento de utilização de terminais e linhas de comando, e afinidade com
+alguma linguagem de programação de alto ou médio nível para a construção dos
+scripts de varredura ou conversão de bases de assinaturas. Foi pensando nesse
+aspceto que se desenvolveu a ideia da aplicação \textit{online} com um sistema
+capaz de automatizar as tarefas de manuseio de assinaturas de \textit{malware},
+para que as pessoas possam, além de testar a confiabilidade de arquivos
+encontrados na \textit{internet}, ter um ponto de partida para conhecer essa
+área da computação e também tentar colocar um pouco desse conhecimento em
 prática de uma maneira colaborativa. O código-fonte do protótipo da aplicação
 encontra-se hospedado \href{https://github.com/ltgouvea/TCC }{neste
 repositório},  aberto para quaisquer desenvolvedores que queiram dar andamento
-ao projeto caso se interessem. Já há serviços de varredura de \textit{malware}
-gratuita disponíveis pela \textit{internet}, então o interesse maior no
-desenvolvimento dessa aplicação é o diferencial que existiria na manipulação de
-assinaturas de modo colaborativo, possivelmente anônimo e montando bases de
-dados automaticamente no módulo de conversão de regras descrito no capítulo de
-desenvolvimento do projeto. O resultado final foi uma aplicação funcional das
-técnicas propostas no projeto que pode ser utilizada isoladamente, sem o auxílio
-de outros \textit{softwares} antí-virus quaisquer, e posteriormente ampliada ou
-incorporada no segmento de uma aplicação \textit{online} similar à ideia descrita
-durante o desenvolvimento do projeto.
+ao projeto caso se interessem.
+
+Já há serviços de varredura de \textit{malware} gratuita disponíveis pela
+\textit{internet}, e podemos relacionar o estudo desenvolvido neste
+projeto com outros projetos recentes como o de SUN et al (\citeyear{sun2012automated}),
+que propõe a ideia de  geração automática de assinaturas de \textit{malware} incorporando
+o mapeamento de características nocivas dentro do próprio sistema de armazenamento de arquivos
+de um sistema operacional, incluindo também um mecanismo de validação das assinaturas
+geradas para a redução de falsos positivos com a implementação de um sistema de calibração
+das mesmas.
+
+Assim, o interesse maior no desenvolvimento dessa aplicação é
+o diferencial que existiria na manipulação de assinaturas de modo colaborativo,
+possivelmente anônimo e montando bases de dados automaticamente no módulo de
+conversão de regras descrito no capítulo de desenvolvimento do projeto. O
+resultado final foi uma aplicação funcional das técnicas propostas no projeto
+que pode ser utilizada isoladamente, sem o auxílio de outros \textit{softwares}
+antí-virus quaisquer, e posteriormente ampliada ou incorporada no segmento de
+uma aplicação \textit{online} similar à ideia descrita durante o desenvolvimento
+do projeto.

@@ -15,7 +15,7 @@ como a rede de computadores que interconecta milhões de dispositivos
 computacionais ao redor do mundo. Há pouco tempo a gama de dispositivos
 conectados à internet era mais baixa e se resumia a servidores e computadores
 de mesa. Hoje pode-se ver que cada vez mais dispositivos não tradicionais
-estão sendo ligados à internet. Assim, defini-se como sistemas finais, ou
+estão sendo ligados à internet. Assim, define-se como sistemas finais, ou
 hospedeiros, quaisquer dispositivos que possuam tal capacidade de conexão. Em
 julho de 2008 estimavam-se 600 milhões de sistemas finais ligados à internet
 sem contar dispositivos que são conectados de maneira intermitente (como
@@ -35,28 +35,28 @@ trabalho é voltado para segurança em redes e uma revisão completa sobre
 fundamentos básicos de redes não elucida conteúdos dessa vertente. Os pacotes
 ainda serão citados no decorrer do trabalho e terão seus conceitos devidamente
 esclarecidos na seção apropriada. A ideia geral de redes de computadores
-suficiente para esse trabalho pode ser ilustrada com a seguinte imagem:
+suficiente para esse trabalho pode ser ilustrada com a figura 2:
 
 \begin{figure}[H]
 \caption{\small Alguns componentes da internet}
 \centering
-\includegraphics[scale=1.3]{figs/fig3.JPG}
+\includegraphics[scale=0.5]{figs/fig3_teste.png}
 \label{f.internet_01}
-\legend{\small Fonte: Kurose (2009)}
+\legend{\small Fonte: Kurose (2009) (adaptada pelo autor)}
 \end{figure}
 
 \section{Segurança em redes de computadores}
 \label{s.seguranca}
 
 Ainda no material de Kurose pode-se definir vários conceitos em segurança de
-redes. A ideia em si vem de imaginar que as pessoas desejam se falar através
-da internet, por exemplo, e que essas pessoas não queiram que ninguém mais
-seja capaz de interceptar esses dados mesmo que elas estejam conectadas em
-locais considerados inseguros, que deixam computadores serem publicamente
-utilizados. Além disso, imaginar que as pessoas também querem garantir que as
-mensagens trocadas não sejam originadas de um intruso, ou passem por um
-intruso na rede. Com essa ideia pode-se elencar as propriedades necessárias
-para uma comunicação considerada \emph{segura}. São elas:
+redes. A ideia em si vem de imaginar que as pessoas desejam se falar através da
+internet, por exemplo, e que essas pessoas não queiram que ninguém mais seja
+capaz de interceptar esses dados mesmo que elas estejam conectadas em locais
+considerados inseguros, que deixam computadores serem publicamente utilizados.
+Além disso, imaginar que as pessoas também querem garantir que as mensagens
+trocadas não sejam originadas de um intruso, ou passem por um intruso na rede.
+Com essa ideia somos capazes de elencar as propriedades necessárias para uma
+comunicação considerada \emph{segura}. São elas:
 
 \begin{itemize}
 \item[-] Confidencialidade: A garantia de que somente respectivos remetentes e destinatários sejam capazes de ver e entender o conteúdo das mensagens transmitidas.
@@ -238,7 +238,7 @@ determinada condição. Para isso, o programa fica apenas checando a data do
 sistema até que seja a data especificada e só então ele vai, de fato, executar
 seu código.(SAHEED, 2013)
 
-Dadas essas classificações, pode-se ilustrar os tipos de \textit{malware} e suas características com o seguinte quadro:
+Dadas essas classificações, pode-se ilustrar os tipos de \textit{malware} e suas características com o quadro 1:
 
 \begin{quadro}[h]
 \caption{\small Famílias de \textit{Malware} e fatores comparativos}
@@ -247,16 +247,21 @@ Dadas essas classificações, pode-se ilustrar os tipos de \textit{malware} e su
 \label{f.tabelamalware}
 \legend{\small Fonte: Saeed (2013) (traduzida pelo autor).}
 \end{quadro}
-\subsection{Exemplos de Código de Malware} % (fold)
+
+\subsection{Código fonte de Malware} % (fold)
 \label{ssub:exemplos_malware}
 
-Alguns \textit{malwares} acabam tendo seu código aberto e disponibilizado para estudos, ora por vontade de seus próprios autores, ou por vazamento de informações feito por outros \textit{Hackers} interessados em tornar público esse tipo de informação. Nesta seção encontram-se algumas explicações sobre a arquitetura interna dos \textit{malwares} e trechos de código-fonte obtidos a partir de pesquisas em repositórios públicos da \textit{web} 
-
-- Citar os repositórios
-- Imagens do código dos malwares
-
-
-% subsubsection subsubsection_name (end)
+Alguns \textit{malwares} acabam tendo seu código aberto e disponibilizado para
+estudos, ora por vontade de seus próprios autores, ou por vazamento de
+informações feito por outros \textit{hackers} interessados em tornar público
+esse tipo de informação. A cada ano, o nível de complexidade para a construção
+de \textit{malwares} fica maior, pois como a maior parte deles é voltada para
+ataques em rede, é preciso pensar numa aplicação funcional com arquitetura do
+tipo cliente-servidor, contendo além de todos os algoritmos que explorem
+vulnerabilidades, os meios de encriptação e disfarce do \textit{malware}. Ou
+seja, até mesmo o menor dos \textit{malwares} construídos hoje em dia, possui
+muito código embutido e embaralhado dentro de si, a fim de dificultar o processo
+de detecção e mapeamento de assinaturas.
 
 \section{Detecção}
 \label{s.deteccao}
@@ -276,7 +281,7 @@ modo: uma tentativa de acesso de um usuário num sistema corporativo não é, a
 princípio, um ato que possa ser classificado como anômalo; porém, se essa
 mesma tentativa se repete várias vezes em horários não condizentes com o
 expediente comercial, pode haver alguém suspeito tentando roubar as
-credenciais desse usuário. As figuras abaixo exemplificam as ideias de
+credenciais desse usuário. As figuras 3 e 4 exemplificam as ideias de
 anomalia pontual e contextual:
 
 \begin{figure}[H]
@@ -312,7 +317,7 @@ em nível de rede tem adotado a abordagem do aprendizado de máquinas para
 detectar \textit{software} por comportamento, quando em nível de rede. Em nível de
 aplicação, a grande maioria também procura traçar perfis de comportamento
 utilizando técnicas de detecção em modo dinâmico como pode-se ver nos quadros
-abaixo:
+2 e 3, a seguir:
 
 \begin{quadro}[h]
 \caption{\small Tecnologias recentes de detecção em nível de rede}
@@ -329,11 +334,3 @@ abaixo:
 \label{f.tabeladeteccao_app}
 \legend{\small Fonte: Baddar. (\citeyear{baddarxx})}
 \end{quadro}
-
-
-
-
-
-
-
-

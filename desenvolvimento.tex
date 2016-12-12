@@ -1,4 +1,4 @@
-\chapter{DESENVOLVIMENTO}
+\chapter{EXPERIMENTOS E RESULTADOS OBTIDOS}
 \label{c.Desenvolvimento}
 
 O desenvolvimento do projeto dividiu-se em quatro fases: a montagem do ambiente
@@ -27,8 +27,8 @@ por exemplo, \textit{worms}, que são capazes de propagarem-se de maneira
 independente pelos ambientes onde chegam. Para converter as assinaturas, foi
 adaptado um \textit{script} em Python que interpreta os arquivos no que contém
 as assinaturas do ClamAV, cujo formato é .cvd, e reescreve-as na sintaxe
-amigável de regras do Yara com a utilização de expressões regulares. Na imagem
-abaixo ilustra-se o funcionamento do \textit{script} descrito envolvendo as
+amigável de regras do Yara com a utilização de expressões regulares. Na figura
+8 ilustra-se o funcionamento do \textit{script} descrito envolvendo as
 bases de dados utilizadas na implementação:
 % TODO: SCREENSHOT DO SCRIPT DE CONVERSÃO FUNCIONANDO
 \begin{figure}[H]
@@ -42,7 +42,7 @@ bases de dados utilizadas na implementação:
 Após a tradução das regras contidas nas bases de dados, é necessário compilá-las
 antes de finalmente ser possível aplicá-las numa varredura real. Um outro
 pequeno \textit{script} em Python é capaz de realizar essa tarefa, vide
-código-fonte exibido na figura abaixo:
+código-fonte exibido na figura 9:
 \begin{figure}[H]
   \includegraphics[scale=0.6]{figs/script_conversao}
   \centering
@@ -51,7 +51,7 @@ código-fonte exibido na figura abaixo:
   \legend{Fonte: Elaborada pelo autor.}
 \end{figure}
 
-No final da seção de desenvolvimento, há uma lista com os \textit{links} para
+No final desta seção do texto, há uma lista com os \textit{links} para
 \textit{download} de todo o código-fonte utilizado na implementação do projeto.
 
 \section{Testes iniciais com o ambiente de desenvolvimento}
@@ -69,7 +69,7 @@ assinaturas ou montagem de índices mais complexos e adaptação de
 condizente com um cenário real de detecção de \textit{malware}, se fez a
 construção de um índice com um número bem maior de regras obtidas nos
 repositórios já citados previamente. Contudo, nesta segunda etapa ainda não
-procurou-se converter as regras contidas dentro das bases de assinaturas do
+houve tentativa de converter as regras contidas dentro das bases de assinaturas do
 ClamAV, por motivos de complexidade e de completude dos testes propostos. Nessa
 mesma fase, as regras foram aplicadas dentro de um conjunto mais numeroso de
 arquivos, já contendo alguns arquivos de código-fonte e também executáveis de
@@ -84,7 +84,7 @@ características mapeadas pelas assinaturas do índice de regras aplicado.
 \label{s.testefull}
 
 Para consolidar o trabalho com a ferramenta de uma maneira mais definitiva, um
-conjunto de aplicativos ``sadios'' foi misturado com as amostras de
+conjunto de aplicativos ``saudáveis'' foi misturado com as amostras de
 \textit{malware}, e depois espalhado arbitrária e aleatoriamente dentro de uma
 estrutura de pastas para que se efetuasse uma varredura recursiva, utilizando um
 índice de regras mais extenso, agora contendo as regras convertidas e compiladas
@@ -106,13 +106,13 @@ Enfim, o resultado da varredura recursiva envolvendo um índice de regras
 completo foi satisfatório e  esclarecedor quanto ao funcionamento e à
 confiabilidade da ferramenta estudada.
 
-\section{Ideia de uma aplicação web do projeto desenvolvido}
+\section{Aplicação web}
 \label{s.prototipo}
 
 Foi elaborada a ideia de uma aplicação capaz de receber regras do Yara ou
 arquivos de bases de assinaturas de \textit{malware} para manter sua própria
 base de dados unificada e também capaz de realizar varreduras em arquivos
-carregados pelos usuários ao servidor da aplicação. Na imagem a seguir temos um
+carregados pelos usuários ao servidor da aplicação. Na figura 10 temos um
 esboço dos elementos e do funcionamento da aplicação projetada.
 
 \begin{figure}[H]
@@ -123,7 +123,7 @@ esboço dos elementos e do funcionamento da aplicação projetada.
   \legend{Fonte: elaborada pelo autor.}
 \end{figure}
 
-Pensou-se também numa possível estrutura de comunicação entre os módulos
+Trabalhou-se também numa possível estrutura de comunicação entre os módulos
 utilizando os recursos de uma API \textit{RESTful}, que cobriria as funções de
 transação com o banco de dados, execução de scripts na camada do servidor e de
 \textit{upload} e devolução de arquivos entre clientes e servidor, como por
@@ -131,7 +131,7 @@ exemplo o recente projeto Laravel PHP. Pode-se sugerir que A API troque dados
 com um \textit{front-end} implementado em cima do \textit{framework} Angular JS,
 atualmente disponível em sua segunda versão, pelas facilidades que ele contém
 para o desenvolvimento de aplicações que possuem arquitetura semelhante à
-apresentada na ideia descrita. Sugere-se o emprego de tais tecnologias nessa
+apresentada na ideia descrita. Foi decidido o emprego de tais tecnologias nessa
 implementação pois são ótimas para se trabalhar com processamento interno de
 arquivos de texto, por já incluirem bibliotecas para tratamento e interpretação
 de arquivos respeitando diversos parâmetros para combinação e verificação de
