@@ -21,10 +21,10 @@ julho de 2008 estimavam-se 600 milhões de sistemas finais ligados à internet
 sem contar dispositivos que são conectados de maneira intermitente (como
 laptops e smartphones). Quando sistemas finais se comunicam, trocam arquivos
 segmentados, que denominam-se como pacotes, por meio de enlaces de comunicação
-(links), que podem ser físicos ou por ondas, no caso de redes sem fio e via
+(\textit{links}), que podem ser físicos ou por ondas, no caso de redes sem fio e via
 rádio. Os dispositivos periféricos que são responsáveis por essa comunicação
 são chamados comutadores de pacotes, vistos comumente como roteadores e
-switchs. O que torna essa comunicação válida entre tantos dispositivos
+\textit{switchs}. O que torna essa comunicação válida entre tantos dispositivos
 diversos são os protocolos de rede, como TCP/IP. Tais protocolos apenas
 definem a estrutura dos pacotes que serão trocados e a classificação dos dados
 dentro destas estruturas. Dessa maneira, os comutadores de pacotes conseguem
@@ -48,7 +48,7 @@ suficiente para esse trabalho pode ser ilustrada com a figura 2:
 \section{Segurança em redes de computadores}
 \label{s.seguranca}
 
-Ainda no material de Kurose pode-se definir vários conceitos em segurança de
+Para KUROSE (\citeyear{kurose09}), pode-se definir vários conceitos em segurança de
 redes. A ideia em si vem de imaginar que as pessoas desejam se falar através da
 internet, por exemplo, e que essas pessoas não queiram que ninguém mais seja
 capaz de interceptar esses dados mesmo que elas estejam conectadas em locais
@@ -62,13 +62,13 @@ comunicação considerada \emph{segura}. São elas:
 \item[-] Confidencialidade: A garantia de que somente respectivos remetentes e destinatários sejam capazes de ver e entender o conteúdo das mensagens transmitidas.
 \item[-] Autenticação do ponto final: Remetentes e destinatários precisam ter meios de confirmar a identidade uns dos outros durante uma comunicação.
 \item[-] Integridade da mensagem: Além de identificarem uns aos outros, os envolvidos na comunicação querem assegurar que o conteúdo que enviem seja exatamente o conteúdo que as outras partes recebam. As mensagens podem se corromper durante uma comunicação tanto por acidentes, como por má intenção de intrusos na rede.
-\item[-] Segurança Operacional: Qualquer empresa atualmente vai ter uma rede local conectada à rede pública. Os mecanismos responsáveis por filtrar o que a rede local vai receber da rede pública são chamados mecanismos de segurança operacional, como firewalls, que são servidores que se posicionam entre as duas redes e intermedeiam a comunicação entre elas, e também como sistemas de detecção de intrusão, foco maior do trabalho, que são sistemas que analisam os pacotes de maneira mais profunda e os identificam para separar e tratar pacotes potencialmente suspeitos.
+\item[-] Segurança Operacional: Qualquer empresa atualmente vai ter uma rede local conectada à rede pública. Os mecanismos responsáveis por filtrar o que a rede local vai receber da rede pública são chamados mecanismos de segurança operacional, como \textit{firewalls}, que são servidores que se posicionam entre as duas redes e intermedeiam a comunicação entre elas, e também como sistemas de detecção de intrusão, foco maior do trabalho, que são sistemas que analisam os pacotes de maneira mais profunda e os identificam para separar e tratar pacotes potencialmente suspeitos.
 \end{itemize}
 
 Qualquer ação de um intruso na rede configura uma falha na presença de um ou
 mais dos quesitos elencados acima; quando ocorre tal brecha e um usuário
 estranho consegue acesso não autorizado a uma rede, ele ganha muitas
-possibilidades de uso pra essa rede. Um invasor pode agir de modo passivo
+possibilidades de uso para essa rede. Um invasor pode agir de modo passivo
 apenas monitorando as comunicações que pode ver, ou então agir com um caráter
 mais nocivo e alterar os conteúdos que acessa, seja corrompendo, alterando ou
 removendo arquivos, senhas e dados diversos. Os sistemas de detecção de
@@ -102,7 +102,7 @@ classificações mais profundas desse tópico, faz-se necessário recorrer a uma
 completa sobre os processos relacionados ao \textit{Malware}. Na pesquisa desenvolvida
 por SAHEED(\citeyear{saeed13}), pode-se aproveitar muitas informações sobre o
 patamar do desenvolvimento deste tipo de \textit{software}. De acordo com pesquisas
-levantadas pela McAfee, esses programas continuam a se tornar mais numerosos
+levantadas pela McAfee\footnote{www.mcafee.com}, esses programas continuam a se tornar mais numerosos
 dia-a-dia, sendo encontrados novos ``indivíduos'' aos milhares. Em
 contrapartida, pesquisadores e laboratórios especializados em segurança
 aprimoram novos métodos para construir \textit{anti-malware} mais eficiente e mais
@@ -224,12 +224,12 @@ de pastas ou imagens de disco. Logo, um código maldoso que possa se acoplar
 silenciosamente a esse tipo de arquivo, com certeza conseguirá infectar um
 sistema Windows.
 
-Os Worms são códigos capazes de se replicar em múltiplas máquinas de modo
+Os \textit{Worms} são códigos capazes de se replicar em múltiplas máquinas de modo
 independente, isto é, sem precisar se atrelarem a um determinado programa para
 iniciar seu ciclo de vida. Eles podem, entre outras coisas, consumir a banda
 da rede e privar o usuário infectado de utilizá-la, além de criarem várias
 cópias de si para aumentar a taxa de programação. Esta última característica é
-o que os \textit{softwares} de anti-vírus utilizam para identificar Worms; se um
+o que os \textit{softwares} de anti-vírus utilizam para identificar \textit{Worms}; se um
 arquivo está se repetindo muitas vezes com atributos iguais, ele é considerado
 suspeito nesses sistemas de detecção.
 
@@ -239,8 +239,9 @@ sistema até que seja a data especificada e só então ele vai, de fato, executa
 seu código.(SAHEED, 2013)
 
 Dadas essas classificações, pode-se ilustrar os tipos de \textit{malware} e suas características com o quadro 1:
+\renewcommand{\thequadro}{\arabic{quadro}}
 
-\begin{quadro}[h]
+\begin{quadro}[H]
 \caption{\small Famílias de \textit{Malware} e fatores comparativos}
 \centering
 \includegraphics{figs/tabela.pdf}
@@ -287,7 +288,7 @@ anomalia pontual e contextual:
 \begin{figure}[H]
 \caption{\small Exemplo de anomalia pontual}
 \centering
-\includegraphics[scale=0.5]{figs/anomalia_pontual.JPG}
+\includegraphics[scale=0.6]{figs/anomalia_pontual.JPG}
 \label{f.anomalia_pontual}
 \legend{\small Fonte: Baddar. (\citeyear{baddarxx})}
 \end{figure}
@@ -295,7 +296,7 @@ anomalia pontual e contextual:
 \begin{figure}[H]
 \caption{\small Exemplo de anomalia contextual}
 \centering
-\includegraphics[scale=0.5]{figs/anomalia_contextual.JPG}
+\includegraphics[scale=0.6]{figs/anomalia_contextual.JPG}
 \label{f.contextual}
 \legend{\small Fonte: Baddar. (\citeyear{baddarxx})}
 \end{figure}
@@ -322,7 +323,7 @@ utilizando técnicas de detecção em modo dinâmico como pode-se ver nos quadro
 \begin{quadro}[h]
 \caption{\small Tecnologias recentes de detecção em nível de rede}
 \centering
-\includegraphics[scale=0.7]{figs/tabela_deteccao_nivel_rede.JPG}
+\includegraphics[scale=0.6]{figs/tabela_deteccao_nivel_rede.JPG}
 \label{f.tabeladeteccao_rede}
 \legend{\small Fonte: Baddar. (\citeyear{baddarxx})}
 \end{quadro}
@@ -330,7 +331,7 @@ utilizando técnicas de detecção em modo dinâmico como pode-se ver nos quadro
 \begin{quadro}[h]
 \caption{\small Tecnologias recentes de detecção em nível de aplicação}
 \centering
-\includegraphics[scale=0.7]{figs/tabela_deteccao_nivel_aplicacao.JPG}
+\includegraphics[scale=0.6]{figs/tabela_deteccao_nivel_aplicacao.JPG}
 \label{f.tabeladeteccao_app}
 \legend{\small Fonte: Baddar. (\citeyear{baddarxx})}
 \end{quadro}

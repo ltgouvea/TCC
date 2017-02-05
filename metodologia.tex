@@ -25,7 +25,7 @@ A figura 5 ilustra o planejamento do projeto:
 \centering
 \includegraphics[scale=0.4]{figs/fig2}
 \label{f.estrutura_projeto}
-\legend{\small Fonte: Elaborada pelo autor.(2016)}
+\legend{\small Fonte: Elaborada pelo autor.}
 \end{figure}
 
 O fluxo de desenvolvimento do projeto consiste na aplicação de um índice de
@@ -59,7 +59,7 @@ Yara é uma ferramenta de código aberto recentemente desenvolvida, cujo intuito
 auxiliar desenvolvedores a identificar e classificar amostras de
 \textit{malware}. Ele é construído em C, porém, com o auxílio de algumas
 bibliotecas, há a possibilidade de incorporá-lo em scripts de outras linguagens,
-como Python. Segundo ALVAREZ (2014), o funcionamento do Yara consiste em comparar
+como Python. Segundo ALVAREZ (\citeyear{yararules}), o funcionamento do Yara consiste em comparar
 regras criadas pelo desenvolvedor que descrevem famílias de \textit{malware},
 com o código de executáveis quaisquer, ou também de arquivos comprimidos em
 alguns formatos comuns. As regras podem variar bastante em nível de complexidade
@@ -86,13 +86,13 @@ entre eles:
 
 O Yara foi utilizado no presente trabalho de conclusão de curso como meio de
 aplicação dos algoritmos de assinatura nos programas que serão examinados. Com
-o auxílio de scripts desenvolvidos em Python, simularemos uma varredura nesse
+o auxílio de \textit{scripts} desenvolvidos em Python, será simulada uma varredura nesse
 conjunto de programas aplicando regras obtidas através de sites como o
 \href{yararules.org}{Yara Rules} e o
 \href{http://sanesecurity.com/usage/signatures/}{Sane Security}, que
 disponibilizam sem custo algum assinaturas de milhões de códigos maliciosos já
 capturados pela web. Com esse grande arsenal de assinaturas de \textit{malware}, é
-possível testarmos com certa completude as técnicas e assinaturas que são
+possível testar com certa completude as técnicas e assinaturas que são
 desenvolvidas no mercado e utilizadas nos sistemas de detecção de intrusão.
 
 \subsubsection{Regras de detecção do Yara}
@@ -108,52 +108,52 @@ Todos esses dados do arquivo examinado podem ativar condições, listadas na
 construção dessas regras, que vão determinar se o arquivo corresponde ou não à
 família definida nas regras de detecção. Para exemplificar mais claramente a
 construção e o funcionamento das regras, seguem alguns exemplos de código
-obtido do repositório do projeto \href{yararules.org}{Yara Rules} no
+obtido do repositório do projeto \href{yararules.com}{Yara Rules} (yararules.com) no
 \href{github.com}{Github}, ilustrados nas figuras 6 e 7.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.95\textwidth]{figs/zeus}
 	\caption{Regra de detecção para o \textit{malware} ``Zeus''.}
+	\includegraphics[width=0.95\textwidth]{figs/zeus}
 	\label{f.regrazeus}
 	\legend{Fonte: elaborada pelo autor}
 \end{figure}
 
-Na imagem acima temos exemplo de uma descrição para o \textit{malware} chamado
+Na imagem acima ilustra-se um exemplo de uma descrição para o \textit{malware} chamado
 ``Zeus'' (também conhecido como ``RPG'', ``ZBot'', ``Infostealer'', entre
 outros), que é membro da família dos \textit{Trojans}. Segundo informações da
-\href{www.wiki-security.com}{Wiki Security}\citeyear{wikisecurity} os danos
+\href{www.wiki-security.com}{Wiki Security} \footnote{www.wiki-security.com} (\citeyear{wikisecurity}) os danos
 causados por ele incluem roubo de informações pessoais como senhas de email e de
 bancos, para posteriormente efetuarem-se transferências para ``contas-mula'' que
 lavariam o dinheiro das vítimas até que ele chegasse aos atacantes. O
 \textit{malware} foi escrito majoritariamente em C com alguns pequenos trechos
 em php, e seu código fonte, vazado em 2011, pode ser encontrado neste outro
-repositório público do \href{https://github.com/Visgean/Zeus}{Github}. Como
-podemos observar, a regra escrita para marcar o trojan verifica os dois
+repositório público do Github (https://github.com/Visgean/Zeus). Como
+pode-se observar, a regra escrita para marcar o trojan verifica os dois
 primeiros \textit{bytes}, \textit{strings} e o protocolo utilizados por uma
 determinada versão do ``Zeus'' e fica ativa quando a primeira e uma das outras
 duas condições são satisfeitas.
 
 Outro exemplo de regra de detecção envolvendo parâmetros semelhantes aos
 anteriores é a que descreve o \textit{malware} ``Lenovo
-Superfish''\citeyear{lenovosuperfish}; na verdade esse é o nome de um serviço
+Superfish'' (LENOVO, \citeyear{lenovosuperfish}) ; na verdade esse é o nome de um serviço
 que vinha embutido em algumas séries de equipamentos lançados pela fabricante
 Lenovo entre 2014 e 2015, cuja meta era ajudar consumidores a encontrar produtos
 similares aos que eles buscavam pela web. Esse serviço possuía uma
 vulnerabilidade de protocolos que foi explorada na criação do \textit{malware}
 homônimo. No caso, as características que estão sendo mapeadas são novamente os
 dois primeiros \textit{bytes} do programa, porém com strings em formato e
-encodificações diferentes das encontradas na regra anterior, como segue:
+encodificações diferentes das encontradas na regra anterior, como segue na figura 7:
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.95\textwidth]{figs/superfish}
 	\caption{Regra de detecção do ``Superfish''}
+	\includegraphics[width=0.95\textwidth]{figs/superfish}
 	\label{f.superfish}
 	\legend{Fonte: elaborada pelo autor}
 \end{figure}
 
-As regras que utilizaremos no decorrer do projeto serão unificadas num arquivo
+As regras que serão aplicadas no decorrer do projeto serão unificadas num arquivo
 de índice, compiladas com o uso de um \textit{script} em Python para a
 interpretação do Yara e combinadas com o conjunto completo de arquivos de uma só
 vez, pois o próprio Yara já possui métodos implementados que possibilitam
@@ -164,9 +164,8 @@ varreduras de maneira recursiva.
 
 As varreduras efetuadas pelo Yara podem ter seus resultados gravados em arquivos
 de texto para análise posterior, que podem também denominarem-se
-\textit{logs}, que por sua vez retornam um  breve dicionário de strings com o seguinte
-formato:
-
+\textit{logs}, que por sua vez retornam um  breve dicionário de strings com formato exemplificado no Algoritmo 1:
+\renewcommand{\thelstlisting}{\arabic{lstlisting}}
 \begin{lstlisting}[caption=Conteúdo dos arquivos de resultado de varredura, label=resultyara]
 {
 'tags': ['mal', 'ware'],
@@ -183,6 +182,8 @@ Respectivamente, segue o que cada parâmetro representa:
 	\item '\textit{tags}': conjunto dos nomes dos programas maliciosos que estão sendo buscados
 
 	\item '\textit{matches}': True significa positivo para infecção
+	
+	\item '\textit{namespace}': Nome do conjunto ao qual a regra escrita pertence (padrão: \textit{default})
 
 	\item '\textit{rule}': Arquivo com as regras compiladas para aplicação
 
@@ -204,9 +205,9 @@ implementação dos referidos módulos.
 É uma linguagem de programação cujo desenvolvimento ocorre desde 1989. No ano de
 1994, foi lançada a primeira distribuição da versão 1.0 oficial da linguagem e
 sua versão mais recente foi lançada em setembro de 2015. Para as necessidades do
-presente projeto, utilizaremos a versão 2.7 da linguagem, por suportar a
+presente projeto, foi adotada a versão 2.7 da linguagem, por suportar a
 implementação dos \textit{scripts} do Yara e também ser a distribuição mais
-estável da linguagem, segundo o \href{www.python.org}{\textit{site} oficial}. O
+estável da linguagem, segundo o \textit{site} oficial da linguagem.\footnote{www.python.org} O
 Yara suporta integração com scripts feitos tanto em código C puro como em
 Python, porém a escolha da linguagem se deu principalmente pela quantidade de
 material disponível, onde a grande maioria de scripts já prontos e documentados

@@ -25,16 +25,16 @@ próprio ambiente local e de redes com as quais o ambiente local se comunicasse.
 Por isso, com intuito de prevenção, optou-se pela não realização de testes em,
 por exemplo, \textit{worms}, que são capazes de propagarem-se de maneira
 independente pelos ambientes onde chegam. Para converter as assinaturas, foi
-adaptado um \textit{script} em Python que interpreta os arquivos no que contém
+adaptado um \textit{script} em Python que interpreta os arquivos que contém
 as assinaturas do ClamAV, cujo formato é .cvd, e reescreve-as na sintaxe
 amigável de regras do Yara com a utilização de expressões regulares. Na figura
 8 ilustra-se o funcionamento do \textit{script} descrito envolvendo as
 bases de dados utilizadas na implementação:
 % TODO: SCREENSHOT DO SCRIPT DE CONVERSÃO FUNCIONANDO
 \begin{figure}[H]
+  \caption{Funcionamento do \textit{script} de conversão de bases do ClamAV para regras do Yara}
   \includegraphics[scale=0.6]{figs/regras_convertidas}
   \centering
-  \caption{Funcionamento do \textit{script} de conversão de bases do ClamAV para regras do Yara}
   \label{f.regras_convertidas}
   \legend{Fonte: Elaborada pelo autor.}
 \end{figure}
@@ -44,14 +44,14 @@ antes de finalmente ser possível aplicá-las numa varredura real. Um outro
 pequeno \textit{script} em Python é capaz de realizar essa tarefa, vide
 código-fonte exibido na figura 9:
 \begin{figure}[H]
+  \caption{Script para compilação das regras de detecção}
   \includegraphics[scale=0.6]{figs/script_conversao}
   \centering
-  \caption{Script para compilação das regras de detecção}
   \label{f.script_comp}
   \legend{Fonte: Elaborada pelo autor.}
 \end{figure}
 
-No final desta seção do texto, há uma lista com os \textit{links} para
+No final da seção \ref{s.repositorio} do texto, há uma lista com os \textit{links} para
 \textit{download} de todo o código-fonte utilizado na implementação do projeto.
 
 \section{Testes iniciais com o ambiente de desenvolvimento}
@@ -112,13 +112,13 @@ confiabilidade da ferramenta estudada.
 Foi elaborada a ideia de uma aplicação capaz de receber regras do Yara ou
 arquivos de bases de assinaturas de \textit{malware} para manter sua própria
 base de dados unificada e também capaz de realizar varreduras em arquivos
-carregados pelos usuários ao servidor da aplicação. Na figura 10 temos um
+carregados pelos usuários ao servidor da aplicação. Na figura 10 há um
 esboço dos elementos e do funcionamento da aplicação projetada.
 
 \begin{figure}[H]
+  \caption{Fluxograma de funcionamento da aplicação.}
   \includegraphics[scale=0.6]{figs/flux_prototipo}
   \centering
-  \caption{Fluxograma de funcionamento da aplicação.}
   \label{f.flux_prototipo}
   \legend{Fonte: elaborada pelo autor.}
 \end{figure}
@@ -127,8 +127,8 @@ Trabalhou-se também numa possível estrutura de comunicação entre os módulos
 utilizando os recursos de uma API \textit{RESTful}, que cobriria as funções de
 transação com o banco de dados, execução de scripts na camada do servidor e de
 \textit{upload} e devolução de arquivos entre clientes e servidor, como por
-exemplo o recente projeto Laravel PHP. Pode-se sugerir que A API troque dados
-com um \textit{front-end} implementado em cima do \textit{framework} Angular JS,
+exemplo o recente projeto Laravel PHP (OTWELL, T. \citeyear{laravel}).\footnote{www.laravel.com} Pode-se sugerir que A API troque dados
+com um \textit{front-end} implementado em cima do \textit{framework} Angular JS\footnote{www.angular.io/docs/ts/latest/} (GOOGLE, \citeyear{angularjs}),
 atualmente disponível em sua segunda versão, pelas facilidades que ele contém
 para o desenvolvimento de aplicações que possuem arquitetura semelhante à
 apresentada na ideia descrita. Foi decidido o emprego de tais tecnologias nessa

@@ -1,17 +1,3 @@
-%CONSIDERAÇÕES INICIAIS
-% O ARQUIVO ORIGINAL NÃO É MEU, SÓ O RECHEIO (OBVIAMENTE, NÃO SOU OTÁRIO PRA PLAGIAR)
-% SE VOCÊ QUER COPIAR, COPIE MESMO! WORD É PARA OS FRACOS, USE TEX E SEJA EFICIENTE, PORRA!
-% É SÓ TROCAR O RECHEIO DAS COISAS, A ESTRUTURA DO TRABALHO É SUAVE DE ENTENDER E É BEM À PROVA DE NOOBS
-% SE VOCÊ É NOOB: SINTO MUITO, SE FODEU. VOLTE AO M$ OFFICE QUE É O TEU LUGAR!
-%
-% RECOMENDO USAR ATOM OU SUBLIME TEXT COM O PLUGIN LATEX TOOLS E OS SNIPPETS QUE ESTÃO EM UM REPO DO GIT QUE
-% EU AINDA VOU LINKAR AQUI
-% VOCE TEM QUE TER O PACOTE MIKTEX BAIXADO E JA TER CONFIGURADO ELE PRA USAR ABNTEX2 E A PORRA TODA
-% SENÃO NÃO VAI COMPILAR E VOCÊ VAI TER QUE VOLTAR PRO OFFICE E CONTAR PROS SEUS AMIGOS QUE VOCÊ
-% FALHOU E É UMA DESONRA PARA OS PROGRAMADORES DO MUNDO INTEIRO. DESONRA PRA VOCÊ, DESONRA PRO SEU CÓDIGO!
-%
-% É ISSO AÍ, PARE DE PROCRASTINAR E FAÇA SEU TRABALHO. SEI QUE TÁ ATRASADO, RELAXA
-% BOA SORTE!
 \documentclass[
 	% -- opções da classe memoir --
 	12pt,				% tamanho da fonte
@@ -75,6 +61,7 @@
 \renewcommand{\listquadroname}{Lista de Quadros} % Forçar texto na Lista de Quadros
 \renewcommand{\lstlistingname}{Algoritmo}
 % ---
+
 % Configurações do pacote backref
 \renewcommand{\familydefault}{\sfdefault}
 % Usado sem a opção hyperpageref de backref
@@ -82,14 +69,14 @@
 % Texto padrão antes do número das páginas
 \renewcommand{\backref}{}
 % Define os textos da citação
-\renewcommand*{\backrefalt}[4]{
-	\ifcase #1 %
-		Nenhuma citação no texto.%
-	\or
-		Citado na página #2.%
-	\else
-		Citado #1 vezes nas páginas #2.%
-	\fi}%
+% \renewcommand*{\backrefalt}[4]{
+% 	\ifcase #1 %
+% 		Nenhuma citação no texto.%
+% 	\or
+% 		Citado na página #2.%
+% 	\else
+% 		Citado #1 vezes nas páginas #2.%
+% 	\fi}%
 % ---
 
 % ---
@@ -262,9 +249,9 @@ ASSINATURAS PARA REDES DE COMPUTADORES}
 
    \center Banca Examinadora
 
-   \assinatura{\textbf{\imprimirorientador} \\ Orientador}
-   \assinatura{\textbf{Simone das Graças Domingues Prado} \\ Convidado 1}
-   \assinatura{\textbf{João Paulo Papa} \\ Convidado 2}
+   \assinatura{\textbf{\imprimirorientador} \\ Departamento de computação - Faculdade de Ciências, UNESP Campus Bauru}
+   \assinatura{\textbf{Dra. Simone das Graças Domingues Prado} \\ Departamento de computação - Faculdade de Ciências, UNESP Campus Bauru}
+   \assinatura{\textbf{Dr. João Paulo Papa} \\ Departamento de computação - Faculdade de Ciências, UNESP Campus Bauru}
    %\assinatura{\textbf{Professor} \\ Convidado 3}
    %\assinatura{\textbf{Professor} \\ Convidado 4}
 
@@ -283,10 +270,9 @@ ASSINATURAS PARA REDES DE COMPUTADORES}
 % ---
 \begin{dedicatoria}
    \vspace*{\fill}
-   \centering
-   \noindent
-   \textit{Dedico esse texto a todos que valorizam a liberdade e o conhecimento.}
-   \vspace*{\fill}
+   \begin{flushright}
+   		\textit{Dedico esse texto a todos que valorizam a liberdade e o conhecimento.}
+   \end{flushright}
 \end{dedicatoria}
 % ---
 
@@ -409,7 +395,6 @@ malware signature testing and file verification.
 % ---
 \newpage % Forçar a lista de quadros em uma nova página
 \phantomsection % Comando necessário caso o pacote hyperref seja utilizado, visando a corrigir o link
-\addcontentsline{toc}{chapter}{\listquadroname} % Adicionar no Sumário um capítulo cujo nome está contido na variável listquadroname
 \listofquadros % Adiciona lista de quadros
 \cleardoublepage
 
@@ -437,7 +422,6 @@ malware signature testing and file verification.
 % ----------------------------------------------------------
 
 \input{introducao.tex}
-\input{objetivos.tex}
 \input{fundamentacao.tex}
 \input{metodologia.tex}
 \input{desenvolvimento.tex}
