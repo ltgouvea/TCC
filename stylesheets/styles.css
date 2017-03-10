@@ -364,7 +364,7 @@ fieldset {
 
 /*
  * 1. Corrects color not being inherited in IE6/7/8/9
- * 2. Corrects text not wrapping in FF3 
+ * 2. Corrects text not wrapping in FF3
  * 3. Corrects alignment displayed oddly in IE6/7
  */
 legend {
@@ -866,8 +866,6 @@ footer {
   border: 3px solid;
   float: right;
   position: relative;
-  top: -85px;
-  right: 150px;
 }
 
 .hidden {
