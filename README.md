@@ -1,6 +1,4 @@
-TCC desenvolvido para o curso de BCC da UNESP de Bauru, 2016.
-Para qualquer dúvida sobre o projeto, entre em contato comigo pelo próprio GitHub.
-<!-- TCC para o curso de BCC que não vale AACC na UNESP de Bauru
+TCC para o curso de BCC que não vale AACC na UNESP de Bauru
 
 ![alt tag](http://i.giphy.com/KC69a6WBYuLra.gif)
 
@@ -25,4 +23,4 @@ SIM, CARALHO ELE FAZ! SEUS PROFESSORES NUNCA TE DISSERAM PORQUE ELES TE ODEIAM :
 Daí, pequeno gafanhoto, abra o projeto.tex no sublime, CTRL +  B (no atom é CTRL + ALT + B) E SAI UM PDF MAIS BONITO DO QUE VOCÊ!
 
 
-* Recomendo SumatraPDF pra abrir os pdf por ele ser leve feito uma pluma -->
+* Recomendo SumatraPDF pra abrir os pdf por ele ser leve feito uma pluma
