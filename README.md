@@ -16,6 +16,6 @@ SIM, CARALHO ELE FAZ! SEUS PROFESSORES NUNCA TE DISSERAM PORQUE ELES TE ODEIAM :
 
 - Latex e Abntex2 (Linux): https://github.com/abntex/abntex2/wiki/InstalacaoLinux
 
-- Pacote Miktex (só necessário pro Window$): esse negócio é insano e já baixa o que você vai precisar pra construir o .tex além de manter tudo atualizadinho. Mamão com açúcar memo. http://miktex.org/ e instala aí. Qualquer coisa use o google pra fazer uma gambiarra no seu sistema operacional (to usando Window$$ pq o fabricante do meu note colocou um sigilo azteca contra linux na bios do meu aparelho e não tenho as moral de fazer o ritual certo pra quebrar)
+- Pacote Miktex (só necessário pro Window$): esse negócio é insano e já baixa o que você vai precisar pra construir o .tex além de manter tudo atualizadinho. Mamão com açúcar memo. http://miktex.org/ e instala aí. Qualquer coisa use o google pra fazer uma gambiarra no seu sistema operacional (to usando Window$$ pq o fabricante do meu note colocou um sigilo azteca contra linux na bios do meu aparelho e não tenho as moral de fazer o ritual certo pra quebrar) UPDATE: Fiz o ritual e removi o Windows pra sempre.
 
 - Editor de texto de sua preferência e um terminal pra compilar o .tex principal
